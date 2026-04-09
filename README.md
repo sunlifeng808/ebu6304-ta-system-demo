@@ -19,7 +19,7 @@
 
 ## 2. 技术栈
 
-- Java 11
+- Java 17
 - Maven Web Application（WAR）
 - Java Servlet + JSP + JSTL
 - Gson
@@ -134,7 +134,7 @@ ta-recruitment-system/
 
 建议环境：
 
-- JDK 11
+- JDK 17
 - Maven 3.6+
 - Tomcat 9
 - IntelliJ IDEA Ultimate 或 Eclipse EE
@@ -170,7 +170,7 @@ ta-recruitment-system/
 #### 第二步：配置 JDK
 
 1. 打开 `File -> Project Structure`
-2. 在 `Project SDK` 中选择 JDK 11
+2. 在 `Project SDK` 中选择 JDK 17
 3. `Project language level` 选择默认即可
 
 #### 第三步：配置 Tomcat 9
