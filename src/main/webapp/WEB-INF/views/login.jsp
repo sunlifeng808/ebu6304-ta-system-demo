@@ -16,7 +16,8 @@
 <div class="login-shell">
     <section class="login-hero">
         <p class="login-kicker" data-i18n="brand.subtitle">BUPT International School</p>
-        <h1 data-i18n="brand.title">TA Recruitment System</h1>
+        <h1 data-i18n="login.heroTitle">TA Recruitment
+System</h1>
         <p class="login-copy" data-i18n="login.intro">
             Switch between roles, review applications quickly, and manage the TA process in one cleaner workspace.
         </p>
@@ -114,27 +115,25 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="register-email" data-i18n="register.email">Email</label>
-                    <input id="register-email" name="email" type="email" value="${registerEmail}"
-                           autocomplete="email" data-i18n-placeholder="register.emailPlaceholder"
-                           placeholder="Enter your email" required>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group">
                     <label for="register-username" data-i18n="register.username">Username</label>
                     <input id="register-username" name="username" type="text" value="${registerUsername}"
                            autocomplete="username" data-i18n-placeholder="register.usernamePlaceholder"
-                           placeholder="4-20 letters, numbers or symbols" required>
+                           placeholder="4-20 characters" required>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="register-password" data-i18n="register.password">Password</label>
-                    <input id="register-password" name="password" type="password" autocomplete="new-password"
-                           data-i18n-placeholder="register.passwordPlaceholder"
-                           placeholder="At least 6 characters" required>
-                </div>
+            <div class="form-group">
+                <label for="register-email" data-i18n="register.email">Email</label>
+                <input id="register-email" name="email" type="email" value="${registerEmail}"
+                       autocomplete="email" data-i18n-placeholder="register.emailPlaceholder"
+                       placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="register-password" data-i18n="register.password">Password</label>
+                <input id="register-password" name="password" type="password" autocomplete="new-password"
+                       data-i18n-placeholder="register.passwordPlaceholder"
+                       placeholder="At least 6 characters" required>
             </div>
 
             <div class="form-group">

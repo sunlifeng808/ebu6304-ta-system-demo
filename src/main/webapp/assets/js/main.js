@@ -293,6 +293,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     translations.en["login.formTitle"] = "Access Workspace";
     translations.zh["login.formTitle"] = "\u8fdb\u5165\u5de5\u4f5c\u53f0";
+    translations.en["login.heroTitle"] = "TA Recruitment\nSystem";
+    translations.zh["login.heroTitle"] = "\u52a9\u6559\u62db\u8058\u7cfb\u7edf";
     translations.zh["brand.title"] = "\u52a9\u6559\u62db\u8058\u7cfb\u7edf";
     translations.zh["brand.subtitle"] = "\u5317\u90ae\u56fd\u9645\u5b66\u9662";
     translations.zh["workspace.kicker"] = "\u62db\u8058\u5de5\u4f5c\u53f0";
@@ -356,8 +358,8 @@ document.addEventListener("DOMContentLoaded", function () {
     translations.zh["register.emailPlaceholder"] = "\u8bf7\u8f93\u5165\u4f60\u7684\u90ae\u7bb1";
     translations.en["register.username"] = "Username";
     translations.zh["register.username"] = "\u7528\u6237\u540d";
-    translations.en["register.usernamePlaceholder"] = "4-20 letters, numbers or symbols";
-    translations.zh["register.usernamePlaceholder"] = "4-20 \u4f4d\u5b57\u6bcd\u3001\u6570\u5b57\u6216\u5e38\u7528\u7b26\u53f7";
+    translations.en["register.usernamePlaceholder"] = "4-20 characters";
+    translations.zh["register.usernamePlaceholder"] = "4-20 \u4f4d\u5b57\u7b26";
     translations.en["register.password"] = "Password";
     translations.zh["register.password"] = "\u5bc6\u7801";
     translations.en["register.passwordPlaceholder"] = "At least 6 characters";
