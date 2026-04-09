@@ -1,0 +1,46 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${pageTitle} - TA Recruitment System</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="container">
+        <div class="top-bar">
+            <div>
+                <h1 class="site-title">TA Recruitment System</h1>
+                <p class="site-subtitle">BUPT International School</p>
+            </div>
+            <div class="user-info">
+                <c:if test="${not empty sessionScope.currentUser}">
+                    <span>${sessionScope.currentUser.fullName} (${sessionScope.currentUser.role})</span>
+                    <a class="btn btn-light" href="${pageContext.request.contextPath}/logout">Logout</a>
+                </c:if>
+            </div>
+        </div>
+        <c:if test="${not empty sessionScope.currentUser}">
+            <nav class="nav-bar">
+                <a href="${pageContext.request.contextPath}/dashboard">Dashboard</a>
+                <c:if test="${sessionScope.currentUser.role == 'APPLICANT'}">
+                    <a href="${pageContext.request.contextPath}/applicant/profile">My Profile</a>
+                    <a href="${pageContext.request.contextPath}/jobs">Browse Jobs</a>
+                    <a href="${pageContext.request.contextPath}/applicant/applications">My Applications</a>
+                </c:if>
+                <c:if test="${sessionScope.currentUser.role == 'MO'}">
+                    <a href="${pageContext.request.contextPath}/mo/jobs">My Jobs</a>
+                    <a href="${pageContext.request.contextPath}/mo/jobs/create">Create Job</a>
+                </c:if>
+                <c:if test="${sessionScope.currentUser.role == 'ADMIN'}">
+                    <a href="${pageContext.request.contextPath}/admin/workload">Workload Overview</a>
+                </c:if>
+            </nav>
+        </c:if>
+    </div>
+</header>
+<main class="container page-content">
