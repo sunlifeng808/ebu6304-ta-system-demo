@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <c:set var="pageTitle" value="Job Detail" />
 <%@ include file="includes/header.jspf" %>
 
@@ -9,7 +8,11 @@
         <h2>${job.title}</h2>
         <p><strong>Module:</strong> ${job.moduleName}</p>
         <p><strong>Description:</strong> ${job.description}</p>
-        <p><strong>Required Skills:</strong> ${fn:join(job.requiredSkills, ', ')}</p>
+        <p><strong>Required Skills:</strong>
+            <c:forEach items="${job.requiredSkills}" var="skill" varStatus="status">
+                ${skill}<c:if test="${not status.last}">, </c:if>
+            </c:forEach>
+        </p>
         <p><strong>Hours:</strong> ${job.hours}</p>
         <p><strong>Status:</strong> ${job.status}</p>
     </section>
@@ -27,13 +30,21 @@
         <p><strong>Matched Skills:</strong>
             <c:choose>
                 <c:when test="${empty matchResult.matchedSkills}">None</c:when>
-                <c:otherwise>${fn:join(matchResult.matchedSkills, ', ')}</c:otherwise>
+                <c:otherwise>
+                    <c:forEach items="${matchResult.matchedSkills}" var="skill" varStatus="status">
+                        ${skill}<c:if test="${not status.last}">, </c:if>
+                    </c:forEach>
+                </c:otherwise>
             </c:choose>
         </p>
         <p><strong>Missing Skills:</strong>
             <c:choose>
                 <c:when test="${empty matchResult.missingSkills}">None</c:when>
-                <c:otherwise>${fn:join(matchResult.missingSkills, ', ')}</c:otherwise>
+                <c:otherwise>
+                    <c:forEach items="${matchResult.missingSkills}" var="skill" varStatus="status">
+                        ${skill}<c:if test="${not status.last}">, </c:if>
+                    </c:forEach>
+                </c:otherwise>
             </c:choose>
         </p>
 

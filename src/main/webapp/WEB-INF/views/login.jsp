@@ -26,16 +26,6 @@
 
         <button class="btn btn-primary btn-block" type="submit">Login</button>
     </form>
-
-    <div class="demo-box">
-        <h3>Demo Accounts</h3>
-        <ul>
-            <li><code>applicant1 / 123456</code></li>
-            <li><code>applicant2 / 123456</code></li>
-            <li><code>mo1 / 123456</code></li>
-            <li><code>admin1 / 123456</code></li>
-        </ul>
-    </div>
 </div>
 </body>
 </html>

@@ -168,6 +168,7 @@ textarea {
 
 .btn-block {
     width: 100%;
+    margin-top: 16px;
 }
 
 .btn-small {
@@ -274,6 +275,11 @@ th {
     width: 100%;
     max-width: 480px;
     padding: 30px;
+}
+
+.login-card .form-card .btn-block {
+    display: block;
+    margin-top: 20px;
 }
 
 .login-card h1,

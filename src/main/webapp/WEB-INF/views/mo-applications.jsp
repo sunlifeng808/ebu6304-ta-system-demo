@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <c:set var="pageTitle" value="Applications" />
 <%@ include file="includes/header.jspf" %>
 
@@ -31,12 +30,20 @@
             <tr>
                 <td>${item.applicant.fullName}</td>
                 <td>${item.applicant.email}</td>
-                <td>${fn:join(item.applicant.skills, ', ')}</td>
+                <td>
+                    <c:forEach items="${item.applicant.skills}" var="skill" varStatus="status">
+                        ${skill}<c:if test="${not status.last}">, </c:if>
+                    </c:forEach>
+                </td>
                 <td>${item.matchResult.score}%</td>
                 <td>
                     <c:choose>
                         <c:when test="${empty item.matchResult.missingSkills}">None</c:when>
-                        <c:otherwise>${fn:join(item.matchResult.missingSkills, ', ')}</c:otherwise>
+                        <c:otherwise>
+                            <c:forEach items="${item.matchResult.missingSkills}" var="skill" varStatus="status">
+                                ${skill}<c:if test="${not status.last}">, </c:if>
+                            </c:forEach>
+                        </c:otherwise>
                     </c:choose>
                 </td>
                 <td>

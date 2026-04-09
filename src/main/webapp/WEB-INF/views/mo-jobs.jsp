@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <c:set var="pageTitle" value="My Jobs" />
 <%@ include file="includes/header.jspf" %>
 
@@ -31,7 +30,11 @@
                 <td>${job.title}</td>
                 <td>${job.moduleName}</td>
                 <td>${job.hours}</td>
-                <td>${fn:join(job.requiredSkills, ', ')}</td>
+                <td>
+                    <c:forEach items="${job.requiredSkills}" var="skill" varStatus="status">
+                        ${skill}<c:if test="${not status.last}">, </c:if>
+                    </c:forEach>
+                </td>
                 <td>${job.status}</td>
                 <td>
                     <a class="btn btn-secondary btn-small"
