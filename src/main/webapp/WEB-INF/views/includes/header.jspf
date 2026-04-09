@@ -14,7 +14,6 @@
     <c:if test="${not empty sessionScope.currentUser}">
         <aside class="app-sidebar" data-sidebar>
             <div class="sidebar-header">
-                <div class="brand-mark">TA</div>
                 <div class="brand-copy">
                     <p class="sidebar-eyebrow" data-i18n="brand.subtitle">BUPT International School</p>
                     <h1 class="sidebar-title" data-i18n="brand.title">TA Recruitment System</h1>

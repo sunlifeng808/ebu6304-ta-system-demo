@@ -291,6 +291,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
+    translations.en["login.formDesc"] = "Use your project credentials to continue.";
+    translations.zh["login.formDesc"] = "\u4f7f\u7528\u4f60\u7684\u9879\u76ee\u8d26\u53f7\u7ee7\u7eed\u3002";
+
     function getLanguage() {
         var stored = window.localStorage.getItem(STORAGE_KEY);
         if (stored === "zh" || stored === "en") {
@@ -366,6 +369,98 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.setAttribute("data-language", lang);
     }
 
+    function getSizingText(element, lang) {
+        if (element.hasAttribute("data-i18n")) {
+            return t(element.getAttribute("data-i18n"), lang);
+        }
+
+        if (element.hasAttribute("data-status-label")) {
+            return t("status." + element.getAttribute("data-status-label"), lang);
+        }
+
+        if (element.hasAttribute("data-role-label")) {
+            return t("role." + element.getAttribute("data-role-label"), lang);
+        }
+
+        if (element.hasAttribute("data-lang-toggle")) {
+            return lang === "zh" ? "EN" : "\u4e2d\u6587";
+        }
+
+        return null;
+    }
+
+    function shouldLockWidth(element) {
+        var display = window.getComputedStyle(element).display;
+        return element.matches(".btn, .nav-link, .lang-switch, .role-pill, .badge, label, .workspace-kicker, .account-label, .sidebar-eyebrow") ||
+            display === "inline" ||
+            display === "inline-block" ||
+            display === "inline-flex";
+    }
+
+    function resetStableTranslationSizing(targets) {
+        for (var i = 0; i < targets.length; i++) {
+            targets[i].style.minWidth = "";
+            targets[i].style.minHeight = "";
+            if (targets[i].getAttribute("data-inline-lock") === "1") {
+                targets[i].style.display = "";
+                targets[i].removeAttribute("data-inline-lock");
+            }
+        }
+    }
+
+    function applyStableTranslationSizing() {
+        var targets = document.querySelectorAll("[data-i18n], [data-status-label], [data-role-label], [data-lang-toggle]");
+        resetStableTranslationSizing(targets);
+
+        for (var i = 0; i < targets.length; i++) {
+            var target = targets[i];
+            var englishText = getSizingText(target, "en");
+            var chineseText = getSizingText(target, "zh");
+
+            if (!englishText || !chineseText || englishText === chineseText) {
+                continue;
+            }
+
+            var lockWidth = shouldLockWidth(target);
+            var computedDisplay = window.getComputedStyle(target).display;
+            if (lockWidth && computedDisplay === "inline") {
+                target.style.display = "inline-block";
+                target.setAttribute("data-inline-lock", "1");
+            }
+
+            var originalText = target.textContent;
+            var maxWidth = 0;
+            var maxHeight = 0;
+            var variants = [englishText, chineseText];
+
+            for (var j = 0; j < variants.length; j++) {
+                target.textContent = variants[j];
+                maxWidth = Math.max(maxWidth, Math.ceil(target.getBoundingClientRect().width));
+                maxHeight = Math.max(maxHeight, Math.ceil(target.getBoundingClientRect().height));
+            }
+
+            target.textContent = originalText;
+
+            if (lockWidth && maxWidth > 0) {
+                target.style.minWidth = maxWidth + "px";
+            }
+
+            if (maxHeight > 0) {
+                target.style.minHeight = maxHeight + "px";
+            }
+        }
+    }
+
+    function setupStableTranslationSizing() {
+        applyStableTranslationSizing();
+
+        var resizeTimer = null;
+        window.addEventListener("resize", function () {
+            window.clearTimeout(resizeTimer);
+            resizeTimer = window.setTimeout(applyStableTranslationSizing, 80);
+        });
+    }
+
     function resolveMessage(form, lang) {
         var key = form.getAttribute("data-confirm-key");
         if (key) {
@@ -393,6 +488,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 var next = getLanguage() === "zh" ? "en" : "zh";
                 window.localStorage.setItem(STORAGE_KEY, next);
                 translatePage(next);
+                applyStableTranslationSizing();
             });
         }
     }
@@ -455,4 +551,5 @@ document.addEventListener("DOMContentLoaded", function () {
     setupConfirmForms();
     setupSidebar();
     setupActiveNav();
+    setupStableTranslationSizing();
 });

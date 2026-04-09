@@ -36,7 +36,7 @@
             <div>
                 <p class="workspace-kicker" data-i18n="login.formTitle">Sign in</p>
                 <h2 data-i18n="login.systemTitle">Teaching Assistant Recruitment System</h2>
-                <p class="login-note" data-i18n="login.formDesc">Use the demo accounts below or your own project credentials.</p>
+                <p class="login-note" data-i18n="login.formDesc">Use your project credentials to continue.</p>
             </div>
             <button class="lang-switch" type="button" data-lang-toggle>中文</button>
         </div>
@@ -45,26 +45,21 @@
             <div class="alert alert-error">${errorMessage}</div>
         </c:if>
 
-        <form action="${pageContext.request.contextPath}/login" method="post" class="form-card">
-            <label for="username" data-i18n="login.username">Username</label>
-            <input id="username" name="username" type="text" value="${username}"
-                   data-i18n-placeholder="login.usernamePlaceholder" placeholder="Enter username">
+        <form action="${pageContext.request.contextPath}/login" method="post" class="form-card login-form">
+            <div class="form-group">
+                <label for="username" data-i18n="login.username">Username</label>
+                <input id="username" name="username" type="text" value="${username}"
+                       data-i18n-placeholder="login.usernamePlaceholder" placeholder="Enter username">
+            </div>
 
-            <label for="password" data-i18n="login.password">Password</label>
-            <input id="password" name="password" type="password"
-                   data-i18n-placeholder="login.passwordPlaceholder" placeholder="Enter password">
+            <div class="form-group">
+                <label for="password" data-i18n="login.password">Password</label>
+                <input id="password" name="password" type="password"
+                       data-i18n-placeholder="login.passwordPlaceholder" placeholder="Enter password">
+            </div>
 
             <button class="btn btn-primary btn-block" data-i18n="action.login" type="submit">Login</button>
         </form>
-
-        <div class="demo-box">
-            <h3 data-i18n="login.demoTitle">Demo Accounts</h3>
-            <ul>
-                <li><span data-i18n="login.demoApplicant">Applicant</span>: applicant1 / 123456</li>
-                <li><span data-i18n="login.demoMo">Module Organiser</span>: mo1 / 123456</li>
-                <li><span data-i18n="login.demoAdmin">Administrator</span>: admin1 / 123456</li>
-            </ul>
-        </div>
     </section>
 </div>
 <script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
