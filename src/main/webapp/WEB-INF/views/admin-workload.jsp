@@ -1,22 +1,23 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="pageTitle" value="Workload Overview" />
+<c:set var="pageTitleKey" value="page.workload" />
 <%@ include file="includes/header.jspf" %>
 
 <section class="section-header">
-    <h2>Applicant Workload Overview</h2>
-    <p>Applicants above ${threshold} accepted hours are marked as overloaded.</p>
+    <h2 data-i18n="admin.heading">Applicant Workload Overview</h2>
+    <p><span data-i18n="admin.thresholdPrefix">Applicants above</span> ${threshold} <span data-i18n="admin.thresholdSuffix">accepted hours are marked as overloaded.</span></p>
 </section>
 
 <div class="table-card">
     <table>
         <thead>
         <tr>
-            <th>Applicant Name</th>
-            <th>Email</th>
-            <th>Accepted Jobs Count</th>
-            <th>Total Hours</th>
-            <th>Workload Status</th>
+            <th data-i18n="admin.applicantName">Applicant Name</th>
+            <th data-i18n="profile.email">Email</th>
+            <th data-i18n="admin.acceptedJobsCount">Accepted Jobs Count</th>
+            <th data-i18n="admin.totalHours">Total Hours</th>
+            <th data-i18n="admin.workloadStatus">Workload Status</th>
         </tr>
         </thead>
         <tbody>
@@ -27,13 +28,13 @@
                 <td>${item.acceptedJobsCount}</td>
                 <td>${item.totalHours}</td>
                 <td>
-                    <span class="badge badge-${item.workloadStatus}">${item.workloadStatus}</span>
+                    <span class="badge badge-${item.workloadStatus}" data-status-label="${item.workloadStatus}">${item.workloadStatus}</span>
                 </td>
             </tr>
         </c:forEach>
         <c:if test="${empty workloadSummaries}">
             <tr>
-                <td colspan="5" class="empty-row">No applicant workload data found.</td>
+                <td colspan="5" class="empty-row" data-i18n="admin.empty">No applicant workload data found.</td>
             </tr>
         </c:if>
         </tbody>
