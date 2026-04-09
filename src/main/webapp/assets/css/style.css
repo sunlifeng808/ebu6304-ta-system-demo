@@ -445,6 +445,10 @@ table {
     table-layout: fixed;
 }
 
+.wide-table {
+    min-width: 1080px;
+}
+
 th,
 td {
     padding: 16px 18px;
@@ -459,6 +463,11 @@ th {
     font-size: 13px;
     color: #3d4f63;
     background: rgba(244, 247, 251, 0.82);
+}
+
+.table-text-cell {
+    color: var(--text-subtle);
+    line-height: 1.6;
 }
 
 tbody tr:hover {

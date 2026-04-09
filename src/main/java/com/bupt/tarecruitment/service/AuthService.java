@@ -51,7 +51,8 @@ public class AuthService {
                 "APPLICANT",
                 normalizedFullName,
                 normalizedEmail,
-                new ArrayList<>()
+                new ArrayList<>(),
+                ""
         );
         userRepository.createApplicant(applicant);
         return applicant;

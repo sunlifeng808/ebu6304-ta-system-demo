@@ -384,8 +384,13 @@ document.addEventListener("DOMContentLoaded", function () {
     translations.zh["register.passwordMismatch"] = "\u4e24\u6b21\u8f93\u5165\u7684\u5bc6\u7801\u4e0d\u4e00\u81f4\u3002";
     translations.en["profile.registered"] = "Account created successfully. Complete your profile to improve matching.";
     translations.zh["profile.registered"] = "\u8d26\u53f7\u521b\u5efa\u6210\u529f\uff0c\u5efa\u8bae\u7ee7\u7eed\u5b8c\u5584\u8d44\u6599\u4ee5\u63d0\u5347\u5c97\u4f4d\u5339\u914d\u6548\u679c\u3002";
+    translations.en["profile.desc"] = "Update your name, email, self introduction and skills for better matching.";
+    translations.zh["profile.desc"] = "\u66f4\u65b0\u4f60\u7684\u59d3\u540d\u3001\u90ae\u7bb1\u3001\u81ea\u6211\u4ecb\u7ecd\u548c\u6280\u80fd\u4fe1\u606f\uff0c\u4ee5\u83b7\u5f97\u66f4\u597d\u7684\u5c97\u4f4d\u5339\u914d\u7ed3\u679c\u3002";
+    translations.en["profile.selfIntroduction"] = "Self Introduction";
+    translations.zh["profile.selfIntroduction"] = "\u81ea\u6211\u4ecb\u7ecd";
+    translations.en["profile.selfIntroductionPlaceholder"] = "Share your background, strengths and TA-related experience";
+    translations.zh["profile.selfIntroductionPlaceholder"] = "\u53ef\u4ee5\u7b80\u8981\u4ecb\u7ecd\u4f60\u7684\u80cc\u666f\u3001\u4f18\u52bf\u4ee5\u53ca\u4e0e TA \u76f8\u5173\u7684\u7ecf\u5386";
     translations.zh["profile.heading"] = "\u7533\u8bf7\u4eba\u8d44\u6599";
-    translations.zh["profile.desc"] = "\u66f4\u65b0\u4f60\u7684\u59d3\u540d\u3001\u90ae\u7bb1\u548c\u6280\u80fd\u4fe1\u606f\uff0c\u4ee5\u83b7\u5f97\u66f4\u597d\u7684\u5c97\u4f4d\u5339\u914d\u7ed3\u679c\u3002";
     translations.zh["profile.updated"] = "\u8d44\u6599\u66f4\u65b0\u6210\u529f\u3002";
     translations.zh["profile.fullName"] = "\u59d3\u540d";
     translations.zh["profile.email"] = "\u90ae\u7bb1";

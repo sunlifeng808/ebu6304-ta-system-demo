@@ -40,6 +40,7 @@ public class ApplicantProfileServlet extends BaseServlet {
         String fullName = request.getParameter("fullName");
         String email = request.getParameter("email");
         String skillsText = request.getParameter("skills");
+        String selfIntroduction = request.getParameter("selfIntroduction");
 
         if (fullName == null || fullName.trim().isEmpty() || email == null || email.trim().isEmpty()) {
             request.setAttribute("errorMessage", "Full name and email cannot be empty.");
@@ -57,6 +58,7 @@ public class ApplicantProfileServlet extends BaseServlet {
         applicant.setFullName(fullName.trim());
         applicant.setEmail(email.trim());
         applicant.setSkills(parseSkills(skillsText));
+        applicant.setSelfIntroduction(selfIntroduction == null ? "" : selfIntroduction.trim());
         userRepository.updateApplicant(applicant);
         request.getSession().setAttribute("currentUser", applicant);
 

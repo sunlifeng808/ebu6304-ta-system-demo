@@ -7,7 +7,7 @@
 <section class="card form-card">
     <div class="section-header">
         <h2 data-i18n="profile.heading">Applicant Profile</h2>
-        <p data-i18n="profile.desc">Update your name, email and skills for better matching.</p>
+        <p data-i18n="profile.desc">Update your name, email, self introduction and skills for better matching.</p>
     </div>
 
     <c:if test="${param.msg == 'updated'}">
@@ -26,6 +26,11 @@
 
         <label for="email" data-i18n="profile.email">Email</label>
         <input id="email" name="email" type="email" value="${applicant.email}">
+
+        <label for="selfIntroduction" data-i18n="profile.selfIntroduction">Self Introduction</label>
+        <textarea id="selfIntroduction" name="selfIntroduction" rows="5"
+                  data-i18n-placeholder="profile.selfIntroductionPlaceholder"
+                  placeholder="Share your background, strengths and TA-related experience">${applicant.selfIntroduction}</textarea>
 
         <label for="skills" data-i18n="profile.skills">Skills</label>
         <textarea id="skills" name="skills" rows="4" data-i18n-placeholder="profile.skillsPlaceholder" placeholder="Java, Excel, Communication">${skillsText}</textarea>

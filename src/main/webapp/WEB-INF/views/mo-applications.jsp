@@ -14,11 +14,12 @@
 </c:if>
 
 <div class="table-card">
-    <table>
+    <table class="wide-table">
         <thead>
         <tr>
             <th data-i18n="moApplications.applicant">Applicant</th>
             <th data-i18n="profile.email">Email</th>
+            <th data-i18n="profile.selfIntroduction">Self Introduction</th>
             <th data-i18n="profile.skills">Skills</th>
             <th data-i18n="moApplications.matchScore">Match Score</th>
             <th data-i18n="moApplications.missingSkills">Missing Skills</th>
@@ -31,6 +32,14 @@
             <tr>
                 <td>${item.applicant.fullName}</td>
                 <td>${item.applicant.email}</td>
+                <td class="table-text-cell">
+                    <c:choose>
+                        <c:when test="${empty item.applicant.selfIntroduction}">
+                            <span data-i18n="common.none">None</span>
+                        </c:when>
+                        <c:otherwise>${item.applicant.selfIntroduction}</c:otherwise>
+                    </c:choose>
+                </td>
                 <td>
                     <c:forEach items="${item.applicant.skills}" var="skill" varStatus="status">
                         ${skill}<c:if test="${not status.last}">, </c:if>
@@ -67,7 +76,7 @@
         </c:forEach>
         <c:if test="${empty applicationDisplays}">
             <tr>
-                <td colspan="7" class="empty-row" data-i18n="moApplications.empty">No applicants yet for this job.</td>
+                <td colspan="8" class="empty-row" data-i18n="moApplications.empty">No applicants yet for this job.</td>
             </tr>
         </c:if>
         </tbody>

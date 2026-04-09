@@ -6,6 +6,7 @@
     "role": "APPLICANT",
     "fullName": "Alice Zhang",
     "email": "alice.zhang@bupt.edu.cn",
+    "selfIntroduction": "Second-year student with Java tutoring experience and strong classroom communication skills.",
     "skills": [
       "Java",
       "Communication",
@@ -20,6 +21,7 @@
     "role": "APPLICANT",
     "fullName": "Bob Chen",
     "email": "bob.chen@bupt.edu.cn",
+    "selfIntroduction": "Interested in data analysis and student support, with experience preparing tutorials and presentation materials.",
     "skills": [
       "Python",
       "Data Analysis",
