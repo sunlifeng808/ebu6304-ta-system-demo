@@ -560,6 +560,7 @@ tbody tr:hover {
     max-width: none;
     white-space: pre-line;
     letter-spacing: -0.03em;
+    min-height: 1.8em;
 }
 
 body[data-language="zh"] .login-hero h1 {
