@@ -15,6 +15,7 @@ import javax.servlet.ServletContext;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class UserRepository {
     private final Path filePath;
@@ -59,7 +60,39 @@ public class UserRepository {
     public User findByUsernameAndPassword(String username, String password) {
         List<User> users = findAll();
         for (User user : users) {
-            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+            if (user.getUsername().equalsIgnoreCase(username) && user.getPassword().equals(password)) {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public User findByUsername(String username) {
+        if (username == null) {
+            return null;
+        }
+
+        String normalizedUsername = username.trim().toLowerCase(Locale.ROOT);
+        List<User> users = findAll();
+        for (User user : users) {
+            if (user.getUsername() != null
+                    && user.getUsername().trim().toLowerCase(Locale.ROOT).equals(normalizedUsername)) {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public User findByEmail(String email) {
+        if (email == null) {
+            return null;
+        }
+
+        String normalizedEmail = email.trim().toLowerCase(Locale.ROOT);
+        List<User> users = findAll();
+        for (User user : users) {
+            if (user.getEmail() != null
+                    && user.getEmail().trim().toLowerCase(Locale.ROOT).equals(normalizedEmail)) {
                 return user;
             }
         }
@@ -85,13 +118,33 @@ public class UserRepository {
         return applicants;
     }
 
+    public void createApplicant(Applicant applicant) {
+        synchronized (UserRepository.class) {
+            List<User> users = findAll();
+            for (User user : users) {
+                if (user.getUsername() != null
+                        && user.getUsername().trim().equalsIgnoreCase(applicant.getUsername().trim())) {
+                    throw new IllegalArgumentException("Username is already taken.");
+                }
+                if (user.getEmail() != null
+                        && user.getEmail().trim().equalsIgnoreCase(applicant.getEmail().trim())) {
+                    throw new IllegalArgumentException("Email is already registered.");
+                }
+            }
+            users.add(applicant);
+            JsonFileUtil.writeJson(filePath, users);
+        }
+    }
+
     public void updateApplicant(Applicant updatedApplicant) {
-        List<User> users = findAll();
-        for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).getId().equals(updatedApplicant.getId())) {
-                users.set(i, updatedApplicant);
-                JsonFileUtil.writeJson(filePath, users);
-                return;
+        synchronized (UserRepository.class) {
+            List<User> users = findAll();
+            for (int i = 0; i < users.size(); i++) {
+                if (users.get(i).getId().equals(updatedApplicant.getId())) {
+                    users.set(i, updatedApplicant);
+                    JsonFileUtil.writeJson(filePath, users);
+                    return;
+                }
             }
         }
         throw new RuntimeException("Applicant not found: " + updatedApplicant.getId());

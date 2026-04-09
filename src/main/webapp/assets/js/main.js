@@ -291,8 +291,105 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    translations.en["login.formDesc"] = "Use your project credentials to continue.";
-    translations.zh["login.formDesc"] = "\u4f7f\u7528\u4f60\u7684\u9879\u76ee\u8d26\u53f7\u7ee7\u7eed\u3002";
+    translations.en["login.formTitle"] = "Access Workspace";
+    translations.zh["login.formTitle"] = "\u8fdb\u5165\u5de5\u4f5c\u53f0";
+    translations.zh["brand.title"] = "\u52a9\u6559\u62db\u8058\u7cfb\u7edf";
+    translations.zh["brand.subtitle"] = "\u5317\u90ae\u56fd\u9645\u5b66\u9662";
+    translations.zh["workspace.kicker"] = "\u62db\u8058\u5de5\u4f5c\u53f0";
+    translations.zh["sidebar.account"] = "\u5f53\u524d\u8d26\u53f7";
+    translations.zh["page.dashboard"] = "\u63a7\u5236\u53f0";
+    translations.zh["page.login"] = "\u767b\u5f55";
+    translations.zh["page.profile"] = "\u6211\u7684\u8d44\u6599";
+    translations.zh["page.jobs"] = "\u5c97\u4f4d\u6d4f\u89c8";
+    translations.zh["page.myApplications"] = "\u6211\u7684\u7533\u8bf7";
+    translations.zh["nav.dashboard"] = "\u63a7\u5236\u53f0";
+    translations.zh["nav.profile"] = "\u6211\u7684\u8d44\u6599";
+    translations.zh["nav.jobs"] = "\u6d4f\u89c8\u5c97\u4f4d";
+    translations.zh["nav.myApplications"] = "\u6211\u7684\u7533\u8bf7";
+    translations.zh["action.logout"] = "\u9000\u51fa\u767b\u5f55";
+    translations.zh["action.login"] = "\u767b\u5f55";
+    translations.zh["action.saveProfile"] = "\u4fdd\u5b58\u8d44\u6599";
+    translations.zh["role.APPLICANT"] = "\u7533\u8bf7\u4eba";
+    translations.zh["login.systemTitle"] = "\u6559\u5b66\u52a9\u7406\u62db\u8058\u7cfb\u7edf";
+    translations.zh["login.intro"] = "\u5728\u540c\u4e00\u4e2a\u66f4\u6e05\u6670\u7684\u5de5\u4f5c\u53f0\u4e2d\u5207\u6362\u89d2\u8272\uff0c\u5feb\u901f\u5ba1\u9605\u7533\u8bf7\uff0c\u5e76\u7ba1\u7406 TA \u62db\u8058\u6d41\u7a0b\u3002";
+    translations.zh["login.highlightApplicantTitle"] = "\u7533\u8bf7\u4eba";
+    translations.zh["login.highlightApplicantDesc"] = "\u7ef4\u62a4\u8d44\u6599\u3001\u67e5\u770b\u5339\u914d\u60c5\u51b5\u5e76\u8ddf\u8e2a\u7533\u8bf7\u8fdb\u5ea6\u3002";
+    translations.zh["login.highlightMoTitle"] = "\u8bfe\u7a0b\u8d1f\u8d23\u4eba";
+    translations.zh["login.highlightMoDesc"] = "\u5728\u4e00\u4e2a\u5165\u53e3\u521b\u5efa\u5c97\u4f4d\u5e76\u66f4\u65b0\u7533\u8bf7\u7ed3\u679c\u3002";
+    translations.zh["login.highlightAdminTitle"] = "\u7ba1\u7406\u5458";
+    translations.zh["login.highlightAdminDesc"] = "\u76d1\u63a7\u5f55\u7528\u5de5\u65f6\uff0c\u53ca\u65f6\u53d1\u73b0\u8d85\u8d1f\u8377\u98ce\u9669\u3002";
+    translations.zh["login.username"] = "\u7528\u6237\u540d";
+    translations.zh["login.password"] = "\u5bc6\u7801";
+    translations.zh["login.usernamePlaceholder"] = "\u8bf7\u8f93\u5165\u7528\u6237\u540d";
+    translations.zh["login.passwordPlaceholder"] = "\u8bf7\u8f93\u5165\u5bc6\u7801";
+    translations.zh["login.demoTitle"] = "\u6f14\u793a\u8d26\u53f7";
+    translations.zh["login.demoApplicant"] = "\u7533\u8bf7\u4eba";
+    translations.zh["login.demoMo"] = "\u8bfe\u7a0b\u8d1f\u8d23\u4eba";
+    translations.zh["login.demoAdmin"] = "\u7ba1\u7406\u5458";
+    translations.en["login.formDesc"] = "Sign in with an existing account or create a new applicant account.";
+    translations.zh["login.formDesc"] = "\u4f7f\u7528\u73b0\u6709\u8d26\u53f7\u767b\u5f55\uff0c\u6216\u65b0\u5efa\u4e00\u4e2a\u7533\u8bf7\u4eba\u8d26\u53f7\u3002";
+    translations.en["login.tabSignIn"] = "Sign in";
+    translations.zh["login.tabSignIn"] = "\u767b\u5f55";
+    translations.en["login.tabRegister"] = "Create account";
+    translations.zh["login.tabRegister"] = "\u6ce8\u518c\u8d26\u53f7";
+    translations.en["login.quickStart"] = "Quick Start";
+    translations.zh["login.quickStart"] = "\u5feb\u901f\u4e0a\u624b";
+    translations.en["login.stepAccountTitle"] = "Create an applicant account";
+    translations.zh["login.stepAccountTitle"] = "\u521b\u5efa\u7533\u8bf7\u4eba\u8d26\u53f7";
+    translations.en["login.stepAccountDesc"] = "Students can register directly and enter their skills immediately.";
+    translations.zh["login.stepAccountDesc"] = "\u5b66\u751f\u53ef\u4ee5\u76f4\u63a5\u6ce8\u518c\uff0c\u5e76\u7acb\u5373\u586b\u5199\u521d\u59cb\u6280\u80fd\u4fe1\u606f\u3002";
+    translations.en["login.stepProfileTitle"] = "Complete profile details";
+    translations.zh["login.stepProfileTitle"] = "\u5b8c\u5584\u4e2a\u4eba\u8d44\u6599";
+    translations.en["login.stepProfileDesc"] = "Update your name, email and skills to improve the match score.";
+    translations.zh["login.stepProfileDesc"] = "\u66f4\u65b0\u59d3\u540d\u3001\u90ae\u7bb1\u548c\u6280\u80fd\uff0c\u53ef\u4ee5\u63d0\u5347\u5c97\u4f4d\u5339\u914d\u5206\u6570\u3002";
+    translations.en["login.stepApplyTitle"] = "Track results in one place";
+    translations.zh["login.stepApplyTitle"] = "\u5728\u4e00\u4e2a\u5de5\u4f5c\u53f0\u8ddf\u8e2a\u7ed3\u679c";
+    translations.en["login.stepApplyDesc"] = "Apply for jobs, review outcomes and manage workload from the same workspace.";
+    translations.zh["login.stepApplyDesc"] = "\u5728\u540c\u4e00\u4e2a\u5de5\u4f5c\u53f0\u7533\u8bf7\u5c97\u4f4d\u3001\u67e5\u770b\u7ed3\u679c\u5e76\u7ba1\u7406\u5de5\u65f6\u3002";
+    translations.en["register.fullName"] = "Full Name";
+    translations.zh["register.fullName"] = "\u59d3\u540d";
+    translations.en["register.fullNamePlaceholder"] = "Enter your full name";
+    translations.zh["register.fullNamePlaceholder"] = "\u8bf7\u8f93\u5165\u4f60\u7684\u59d3\u540d";
+    translations.en["register.email"] = "Email";
+    translations.zh["register.email"] = "\u90ae\u7bb1";
+    translations.en["register.emailPlaceholder"] = "Enter your email";
+    translations.zh["register.emailPlaceholder"] = "\u8bf7\u8f93\u5165\u4f60\u7684\u90ae\u7bb1";
+    translations.en["register.username"] = "Username";
+    translations.zh["register.username"] = "\u7528\u6237\u540d";
+    translations.en["register.usernamePlaceholder"] = "4-20 letters, numbers or symbols";
+    translations.zh["register.usernamePlaceholder"] = "4-20 \u4f4d\u5b57\u6bcd\u3001\u6570\u5b57\u6216\u5e38\u7528\u7b26\u53f7";
+    translations.en["register.password"] = "Password";
+    translations.zh["register.password"] = "\u5bc6\u7801";
+    translations.en["register.passwordPlaceholder"] = "At least 6 characters";
+    translations.zh["register.passwordPlaceholder"] = "\u81f3\u5c11 6 \u4f4d";
+    translations.en["register.confirmPassword"] = "Confirm Password";
+    translations.zh["register.confirmPassword"] = "\u786e\u8ba4\u5bc6\u7801";
+    translations.en["register.confirmPasswordPlaceholder"] = "Re-enter your password";
+    translations.zh["register.confirmPasswordPlaceholder"] = "\u8bf7\u518d\u6b21\u8f93\u5165\u5bc6\u7801";
+    translations.en["register.skills"] = "Initial Skills";
+    translations.zh["register.skills"] = "\u521d\u59cb\u6280\u80fd";
+    translations.en["register.skillsPlaceholder"] = "Java, Communication, Data Analysis";
+    translations.zh["register.skillsPlaceholder"] = "Java, \u6c9f\u901a\u534f\u4f5c, \u6570\u636e\u5206\u6790";
+    translations.en["register.skillsHint"] = "Optional. Separate skills with commas. You can edit them later in My Profile.";
+    translations.zh["register.skillsHint"] = "\u9009\u586b\uff0c\u8bf7\u7528\u82f1\u6587\u9017\u53f7\u5206\u9694\u591a\u4e2a\u6280\u80fd\uff0c\u540e\u7eed\u4ecd\u53ef\u5728\u201c\u6211\u7684\u8d44\u6599\u201d\u4e2d\u4fee\u6539\u3002";
+    translations.en["register.scopeTitle"] = "Registration Scope";
+    translations.zh["register.scopeTitle"] = "\u6ce8\u518c\u8303\u56f4";
+    translations.en["register.scopeDesc"] = "Self-registration is available for applicant accounts only. MO and administrator accounts remain managed by the system.";
+    translations.zh["register.scopeDesc"] = "\u76ee\u524d\u4ec5\u5f00\u653e\u7533\u8bf7\u4eba\u8d26\u53f7\u81ea\u52a9\u6ce8\u518c\uff0cMO \u4e0e\u7ba1\u7406\u5458\u8d26\u53f7\u4ecd\u7531\u7cfb\u7edf\u7edf\u4e00\u7ba1\u7406\u3002";
+    translations.en["register.submit"] = "Create Applicant Account";
+    translations.zh["register.submit"] = "\u521b\u5efa\u7533\u8bf7\u4eba\u8d26\u53f7";
+    translations.en["register.passwordMismatch"] = "Passwords do not match.";
+    translations.zh["register.passwordMismatch"] = "\u4e24\u6b21\u8f93\u5165\u7684\u5bc6\u7801\u4e0d\u4e00\u81f4\u3002";
+    translations.en["profile.registered"] = "Account created successfully. Complete your profile to improve matching.";
+    translations.zh["profile.registered"] = "\u8d26\u53f7\u521b\u5efa\u6210\u529f\uff0c\u5efa\u8bae\u7ee7\u7eed\u5b8c\u5584\u8d44\u6599\u4ee5\u63d0\u5347\u5c97\u4f4d\u5339\u914d\u6548\u679c\u3002";
+    translations.zh["profile.heading"] = "\u7533\u8bf7\u4eba\u8d44\u6599";
+    translations.zh["profile.desc"] = "\u66f4\u65b0\u4f60\u7684\u59d3\u540d\u3001\u90ae\u7bb1\u548c\u6280\u80fd\u4fe1\u606f\uff0c\u4ee5\u83b7\u5f97\u66f4\u597d\u7684\u5c97\u4f4d\u5339\u914d\u7ed3\u679c\u3002";
+    translations.zh["profile.updated"] = "\u8d44\u6599\u66f4\u65b0\u6210\u529f\u3002";
+    translations.zh["profile.fullName"] = "\u59d3\u540d";
+    translations.zh["profile.email"] = "\u90ae\u7bb1";
+    translations.zh["profile.skills"] = "\u6280\u80fd";
+    translations.zh["profile.skillsPlaceholder"] = "Java, Excel, \u6c9f\u901a\u534f\u4f5c";
+    translations.zh["profile.skillsHint"] = "\u8bf7\u7528\u82f1\u6587\u9017\u53f7\u5206\u9694\u6280\u80fd\uff0c\u4f8b\u5982\uff1aJava, Python, Communication";
 
     function getLanguage() {
         var stored = window.localStorage.getItem(STORAGE_KEY);
@@ -493,6 +590,64 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function applyAuthMode(mode) {
+        var tabs = document.querySelectorAll("[data-auth-tab]");
+        var panels = document.querySelectorAll("[data-auth-panel]");
+
+        if (!tabs.length || !panels.length) {
+            return;
+        }
+
+        var activeMode = mode === "register" ? "register" : "login";
+        document.body.setAttribute("data-auth-mode", activeMode);
+
+        for (var i = 0; i < tabs.length; i++) {
+            var isActiveTab = tabs[i].getAttribute("data-auth-tab") === activeMode;
+            tabs[i].classList.toggle("is-active", isActiveTab);
+            tabs[i].setAttribute("aria-selected", isActiveTab ? "true" : "false");
+        }
+
+        for (var j = 0; j < panels.length; j++) {
+            var isActivePanel = panels[j].getAttribute("data-auth-panel") === activeMode;
+            panels[j].hidden = !isActivePanel;
+        }
+    }
+
+    function setupAuthMode() {
+        var tabs = document.querySelectorAll("[data-auth-tab]");
+        if (!tabs.length) {
+            return;
+        }
+
+        applyAuthMode(document.body.getAttribute("data-auth-mode"));
+
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].addEventListener("click", function () {
+                applyAuthMode(this.getAttribute("data-auth-tab"));
+            });
+        }
+    }
+
+    function setupRegisterValidation() {
+        var passwordField = document.getElementById("register-password");
+        var confirmField = document.querySelector("[data-register-confirm]");
+
+        if (!passwordField || !confirmField) {
+            return;
+        }
+
+        function syncMessage() {
+            if (!confirmField.value || passwordField.value === confirmField.value) {
+                confirmField.setCustomValidity("");
+                return;
+            }
+            confirmField.setCustomValidity(t("register.passwordMismatch", getLanguage()));
+        }
+
+        passwordField.addEventListener("input", syncMessage);
+        confirmField.addEventListener("input", syncMessage);
+    }
+
     function setupSidebar() {
         var toggle = document.querySelector("[data-sidebar-toggle]");
         var close = document.querySelector("[data-sidebar-close]");
@@ -548,6 +703,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     translatePage(getLanguage());
     setupLanguageToggle();
+    setupAuthMode();
+    setupRegisterValidation();
     setupConfirmForms();
     setupSidebar();
     setupActiveNav();

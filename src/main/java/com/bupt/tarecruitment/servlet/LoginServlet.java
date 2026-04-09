@@ -30,6 +30,7 @@ public class LoginServlet extends BaseServlet {
         User user = authService.login(username, password);
 
         if (user == null) {
+            request.setAttribute("authMode", "login");
             request.setAttribute("errorMessage", "Invalid username or password.");
             request.setAttribute("username", username);
             forwardView(request, response, "login.jsp");

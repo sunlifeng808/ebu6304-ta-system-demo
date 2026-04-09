@@ -13,6 +13,9 @@
     <c:if test="${param.msg == 'updated'}">
         <div class="alert alert-success" data-i18n="profile.updated">Profile updated successfully.</div>
     </c:if>
+    <c:if test="${param.msg == 'registered'}">
+        <div class="alert alert-success" data-i18n="profile.registered">Account created successfully. Complete your profile to improve matching.</div>
+    </c:if>
     <c:if test="${not empty errorMessage}">
         <div class="alert alert-error">${errorMessage}</div>
     </c:if>
