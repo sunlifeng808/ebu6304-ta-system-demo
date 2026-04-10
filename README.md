@@ -82,6 +82,7 @@
 ta-recruitment-system/
 ├── pom.xml
 ├── README.md
+├── demonstration.md
 ├── USER_MANUAL.md
 ├── src/
 │   └── main/
@@ -127,6 +128,8 @@ ta-recruitment-system/
 - `service`：处理业务逻辑
 - `servlet`：接收请求、调用 service、转发 JSP
 - `jsp`：页面展示
+
+如果你需要按课堂展示场景查看项目分工、模块讲解重点、关键逻辑位置和模块联动关系，可以直接阅读根目录下的 `demonstration.md`。
 
 ---
 
@@ -317,29 +320,7 @@ src/main/resources/data/
 
 ---
 
-## 9. 课堂演示建议流程
-
-推荐 5 到 10 分钟演示流程：
-
-1. 使用 `mo1` 登录
-2. 进入 `My Jobs`
-3. 新建一个 TA 岗位
-4. 查看某个岗位下的申请人
-5. 修改某个申请状态为 `Accepted` 或 `Rejected`
-6. 退出登录
-7. 使用 `applicant1` 登录
-8. 编辑个人 profile 和 skills
-9. 浏览岗位列表
-10. 打开岗位详情页，展示匹配分和缺失技能
-11. 提交岗位申请
-12. 打开 `My Applications` 查看申请状态
-13. 退出登录
-14. 使用 `admin1` 登录
-15. 查看 workload 表格，展示 `Normal / Overloaded`
-
----
-
-## 10. 主要页面说明
+## 9. 主要页面说明
 
 ### Applicant
 
@@ -360,9 +341,9 @@ src/main/resources/data/
 
 ---
 
-## 11. 常见问题
+## 10. 常见问题
 
-### 11.1 页面打不开
+### 10.1 页面打不开
 
 先检查：
 
@@ -376,7 +357,7 @@ src/main/resources/data/
 http://localhost:8080/ta-recruitment-system/
 ```
 
-### 11.2 Maven 依赖下载失败
+### 10.2 Maven 依赖下载失败
 
 可能原因：
 
@@ -392,7 +373,7 @@ mvn -version
 
 确认 Maven 和 Java 都能正常使用。
 
-### 11.3 Tomcat 启动了但页面 404
+### 10.3 Tomcat 启动了但页面 404
 
 常见原因：
 
@@ -400,7 +381,7 @@ mvn -version
 - 部署的不是 `war exploded`
 - context path 配置不对
 
-### 11.4 修改 JSON 后没有效果
+### 10.4 修改 JSON 后没有效果
 
 因为系统运行时使用的是复制后的可写数据文件，不一定直接读取 `src/main/resources/data/` 中的源文件。  
 如果要重置数据，最简单的方法是：
@@ -413,7 +394,7 @@ mvn -version
 
 ---
 
-## 12. 项目亮点
+## 11. 项目亮点
 
 这个项目的特点不是“复杂”，而是“适合课程项目”：
 
@@ -427,7 +408,7 @@ mvn -version
 
 ---
 
-## 13. 总结
+## 12. 总结
 
 如果你要做软件工程课程展示，这个项目比较适合：
 
