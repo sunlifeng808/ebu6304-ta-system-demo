@@ -82,7 +82,7 @@
 ta-recruitment-system/
 ├── pom.xml
 ├── README.md
-├── demonstration.md
+├── DEMONSTRATION.md
 ├── USER_MANUAL.md
 ├── src/
 │   └── main/
@@ -129,7 +129,7 @@ ta-recruitment-system/
 - `servlet`：接收请求、调用 service、转发 JSP
 - `jsp`：页面展示
 
-如果你需要按课堂展示场景查看项目分工、模块讲解重点、关键逻辑位置和模块联动关系，可以直接阅读根目录下的 `demonstration.md`。
+如果你需要按课堂展示场景查看项目分工、模块讲解重点、关键逻辑位置和模块联动关系，可以直接阅读根目录下的 `DEMONSTRATION.md`。
 
 ---
 
